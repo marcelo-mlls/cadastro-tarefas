@@ -61,7 +61,7 @@ Para rodar os testes de integração de cada microserviço, navegue até a pasta
 ```bash
 cd userservice 
 mvn test
-bash
+```
 
 **Para o taskservice:**
 ```bash
@@ -76,13 +76,15 @@ Instale as dependências:
 ```bash
 cd frontend
 npm install
+```
 Rode os testes unitários (Jasmine/Karma):
+```bash
 ng test
 ```
 
 Rode os testes End-to-End (Cypress): Primeiro, garanta que a aplicação completa esteja rodando (com docker-compose up). Depois, execute:
 ```bash
 npx cypress open
-```bash
+```
 
 Isso abrirá o Cypress Test Runner, onde você poderá clicar nos arquivos de teste para executá-los em um navegador.
