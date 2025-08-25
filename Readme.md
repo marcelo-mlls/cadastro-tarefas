@@ -33,8 +33,10 @@ Antes de começar, garanta que você tenha os seguintes softwares instalados na 
 Esta é a forma recomendada e mais simples de executar toda a aplicação.
 
 1.  **Clone o repositório:**
+```bash
     git clone https://github.com/marcelo-mlls/cadastro-tarefas
     cd [pasta onde baixou projeto]
+```
 
 2.  **Construa e suba os contêineres:**
     Na raiz do projeto, execute o seguinte comando. Ele irá construir as imagens para os três serviços e iniciar todos os contêineres.
@@ -56,24 +58,31 @@ Esta é a forma recomendada e mais simples de executar toda a aplicação.
 Para rodar os testes de integração de cada microserviço, navegue até a pasta do serviço e use o Maven.
 
 **Para o userservice:**
+```bash
 cd userservice 
 mvn test
+bash
 
 **Para o taskservice:**
+```bash
 cd taskservice
 mvn test
+```
 
 ### Testes de Frontend
 Os testes de frontend requerem a instalação das dependências do Node.js.
 
 Instale as dependências:
-
+```bash
 cd frontend
 npm install
 Rode os testes unitários (Jasmine/Karma):
 ng test
+```
 
 Rode os testes End-to-End (Cypress): Primeiro, garanta que a aplicação completa esteja rodando (com docker-compose up). Depois, execute:
+```bash
 npx cypress open
+```bash
 
 Isso abrirá o Cypress Test Runner, onde você poderá clicar nos arquivos de teste para executá-los em um navegador.
