@@ -1,77 +1,77 @@
-# Desafio de Gerenciamento de Tarefas com Microserviços
+    # Desafio de Gerenciamento de Tarefas com Microserviços
 
-Este repositório contém a implementação de um sistema de gerenciamento de tarefas, desenvolvido como parte de um desafio de código. A aplicação é construída em uma arquitetura de microserviços e inclui um frontend para interação do usuário.
+    Este repositório contém a implementação de um sistema de gerenciamento de tarefas, desenvolvido como parte de um desafio de código. A aplicação é construída em uma arquitetura de microserviços e inclui um frontend para interação do usuário.
 
-## Tecnologias Utilizadas
+    ## Tecnologias Utilizadas
 
-- **Backend:** Java 21, Spring Boot 3
-- **Frontend:** Angular 19
-- **Banco de Dados:** PostgreSQL
-- **Containerização:** Docker & Docker Compose
-- **Testes:**
-  - Backend: JUnit 5, Mockito
-  - Frontend: Jasmine (Unit), Cypress (E2E)
-- **Documentação da API:** SpringDoc (Swagger)
+    - **Backend:** Java 21, Spring Boot 3
+    - **Frontend:** Angular 19
+    - **Banco de Dados:** PostgreSQL
+    - **Containerização:** Docker & Docker Compose
+    - **Testes:**
+    - Backend: JUnit 5, Mockito
+    - Frontend: Jasmine (Unit), Cypress (E2E)
+    - **Documentação da API:** SpringDoc (Swagger)
 
-## Estrutura do Projeto
+    ## Estrutura do Projeto
 
-O projeto está organizado em três pastas principais na raiz do repositório:
-- `/userservice`: Microserviço Spring Boot para gerenciamento de usuários.
-- `/taskservice`: Microserviço Spring Boot para gerenciamento de tarefas.
-- `/frontend`: Aplicação Angular que consome as APIs dos microserviços.
+    O projeto está organizado em três pastas principais na raiz do repositório:
+    - '/userservice': Microserviço Spring Boot para gerenciamento de usuários.
+    - '/taskservice': Microserviço Spring Boot para gerenciamento de tarefas.
+    - '/frontend': Aplicação Angular que consome as APIs dos microserviços.
 
-## Pré-requisitos
+    ## Pré-requisitos
 
-Antes de começar, garanta que você tenha os seguintes softwares instalados na sua máquina:
-- [Docker](https://www.docker.com/get-started)
-- [Docker Compose](https://docs.docker.com/compose/install/) (geralmente já vem com o Docker Desktop)
-- [Node.js](https://nodejs.org/) e npm (para rodar o frontend ou os testes localmente, se desejar)
-- [JDK 21](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html) e [Maven](https://maven.apache.org/download.cgi) (para rodar os backends ou os testes localmente)
+    Antes de começar, garanta que você tenha os seguintes softwares instalados na sua máquina:
+    - [Docker](https://www.docker.com/get-started)
+    - [Docker Compose](https://docs.docker.com/compose/install/) (geralmente já vem com o Docker Desktop)
+    - [Node.js](https://nodejs.org/) e npm (para rodar o frontend ou os testes localmente, se desejar)
+    - [JDK 21](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html) e [Maven](https://maven.apache.org/download.cgi) (para rodar os backends ou os testes localmente)
 
-## Como Executar a Aplicação (Docker)
+    ## Como Executar a Aplicação (Docker)
 
-Esta é a forma recomendada e mais simples de executar toda a aplicação.
+    Esta é a forma recomendada e mais simples de executar toda a aplicação.
 
-1.  **Clone o repositório:**
-    git clone https://github.com/marcelo-mlls/cadastro-tarefas
-    cd [pasta onde baixou projeto]
+    1.  **Clone o repositório:**
+        git clone https://github.com/marcelo-mlls/cadastro-tarefas
+        cd [pasta onde baixou projeto]
 
-2.  **Construa e suba os contêineres:**
-    Na raiz do projeto, execute o seguinte comando. Ele irá construir as imagens para os três serviços e iniciar todos os contêineres.
-    docker-compose up --build
+    2.  **Construa e suba os contêineres:**
+        Na raiz do projeto, execute o seguinte comando. Ele irá construir as imagens para os três serviços e iniciar todos os contêineres.
+        docker compose up --build
 
-    Aguarde até que todos os logs de inicialização terminem.
+        Aguarde até que todos os logs de inicialização terminem.
 
-3.  **Acesse a aplicação:**
-    - **Frontend:** Abra seu navegador e acesse `http://localhost:4200`
-    - **API do Serviço de Usuários (Swagger):** `http://localhost:8080/swagger-ui.html`
-    - **API do Serviço de Tarefas (Swagger):** `http://localhost:8081/swagger-ui.html`
+    3.  **Acesse a aplicação:**
+        - **Frontend:** Abra seu navegador e acesse 'http://localhost:4200'
+        - **API do Serviço de Usuários (Swagger):** 'http://localhost:8080/swagger-ui.html'
+        - **API do Serviço de Tarefas (Swagger):** 'http://localhost:8081/swagger-ui.html'
 
-## Como Executar os Testes
+    ## Como Executar os Testes
 
-### Testes de Backend
+    ### Testes de Backend
 
-Para rodar os testes de integração de cada microserviço, navegue até a pasta do serviço e use o Maven.
+    Para rodar os testes de integração de cada microserviço, navegue até a pasta do serviço e use o Maven.
 
-**Para o `user-service`:**
-cd userservice
-mvn test
+    **Para o userservice:**
+    cd userservice
+    mvn test
 
-Para o taskservice:
-cd task-service
-mvn test
+    **Para o taskservice:**
+    cd taskservice
+    mvn test
 
-Testes de Frontend
-Os testes de frontend requerem a instalação das dependências do Node.js.
+    Testes de Frontend
+    Os testes de frontend requerem a instalação das dependências do Node.js.
 
-Instale as dependências:
+    Instale as dependências:
 
-cd frontend
-npm install
-Rode os testes unitários (Jasmine/Karma):
+    cd frontend
+    npm install
+    Rode os testes unitários (Jasmine/Karma):
 
-ng test
-Rode os testes End-to-End (Cypress): Primeiro, garanta que a aplicação completa esteja rodando (com docker-compose up). Depois, execute:
+    ng test
+    Rode os testes End-to-End (Cypress): Primeiro, garanta que a aplicação completa esteja rodando (com docker-compose up). Depois, execute:
 
-npx cypress open
-Isso abrirá o Cypress Test Runner, onde você poderá clicar nos arquivos de teste para executá-los em um navegador.
+    npx cypress open
+    Isso abrirá o Cypress Test Runner, onde você poderá clicar nos arquivos de teste para executá-los em um navegador.

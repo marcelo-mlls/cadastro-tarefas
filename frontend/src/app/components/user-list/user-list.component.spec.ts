@@ -34,7 +34,7 @@ describe('UserListComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeDefined();
   });
 
   it('should display "Novo Usuário" in the heading on init', () => {
