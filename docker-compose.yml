@@ -1,0 +1,54 @@
+  version: '3.8'
+
+  services:
+    postgres-db:
+      image: postgres:13
+      container_name: postgres_db
+      environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+        POSTGRES_DB: postgres
+      ports:
+        - "5432:5432"
+      volumes:
+        - postgres_data:/var/lib/postgresql/data
+        - ./init.sql:/docker-entrypoint-initdb.d/init.sql 
+
+    userservice:
+      build:
+        context: ./userservice 
+      container_name: userservice
+      ports:
+        - "8080:8080"
+      environment:
+        SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-db:5432/user_db
+        SPRING_DATASOURCE_USERNAME: postgres
+        SPRING_DATASOURCE_PASSWORD: postgres
+      depends_on:
+        - postgres-db
+
+    taskservice:
+      build:
+        context: ./taskservice
+      container_name: taskservice
+      ports:
+        - "8081:8081"
+      environment:
+        SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-db:5432/task_db
+        SPRING_DATASOURCE_USERNAME: postgres
+        SPRING_DATASOURCE_PASSWORD: postgres
+      depends_on:
+        - postgres-db
+        
+    frontend:
+      build:
+        context: ./frontend
+      container_name: frontend
+      ports:
+        - "4200:80"
+      depends_on:
+        - userservice
+        - taskservice
+
+  volumes:
+    postgres_data:
