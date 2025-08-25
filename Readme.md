@@ -1,6 +1,6 @@
 # Desafio de Gerenciamento de Tarefas com Microserviços
 
-Este repositório contém a implementação de um sistema de gerenciamento de tarefas, desenvolvido como parte de um desafio de código. A aplicação é construída em uma arquitetura de microserviços e inclui um frontend para interação do usuário.
+Este repositório contém a implementação de um sistema de gerenciamento de tarefas. A aplicação é construída em uma arquitetura de microserviços e inclui um frontend para interação do usuário.
 
 ## Tecnologias Utilizadas
 
