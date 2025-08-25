@@ -38,7 +38,7 @@ Esta é a forma recomendada e mais simples de executar toda a aplicação.
 
 2.  **Construa e suba os contêineres:**
     Na raiz do projeto, execute o seguinte comando. Ele irá construir as imagens para os três serviços e iniciar todos os contêineres.
-    # docker compose up --build
+    - docker compose up --build
 
     Aguarde até que todos os logs de inicialização terminem.
 
