@@ -38,7 +38,7 @@ Esta é a forma recomendada e mais simples de executar toda a aplicação.
 
 2.  **Construa e suba os contêineres:**
     Na raiz do projeto, execute o seguinte comando. Ele irá construir as imagens para os três serviços e iniciar todos os contêineres.
-    docker compose up --build
+    # docker compose up --build
 
     Aguarde até que todos os logs de inicialização terminem.
 
@@ -54,7 +54,7 @@ Esta é a forma recomendada e mais simples de executar toda a aplicação.
 Para rodar os testes de integração de cada microserviço, navegue até a pasta do serviço e use o Maven.
 
 **Para o userservice:**
-cd userservice
+cd userservice 
 mvn test
 
 **Para o taskservice:**
