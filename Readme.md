@@ -20,13 +20,6 @@ O projeto está organizado em três pastas principais na raiz do repositório:
 - '/taskservice': Microserviço Spring Boot para gerenciamento de tarefas.
 - '/frontend': Aplicação Angular que consome as APIs dos microserviços.
 
-## Pré-requisitos
-
-Antes de começar, garanta que você tenha os seguintes softwares instalados na sua máquina:
-- [Docker](https://www.docker.com/get-started)
-- [Docker Compose](https://docs.docker.com/compose/install/) (geralmente já vem com o Docker Desktop)
-- [Node.js](https://nodejs.org/) e npm (para rodar o frontend ou os testes localmente, se desejar)
-- [JDK 21](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html) e [Maven](https://maven.apache.org/download.cgi) (para rodar os backends ou os testes localmente)
 
 ## Como Executar a Aplicação (Docker)
 
@@ -35,11 +28,10 @@ Esta é a forma recomendada e mais simples de executar toda a aplicação.
 1.  **Clone o repositório:**
 ```bash
     git clone https://github.com/marcelo-mlls/cadastro-tarefas
-    cd [pasta onde baixou projeto]
 ```
 
 2.  **Construa e suba os contêineres:**
-    Na raiz do projeto, execute o seguinte comando. Ele irá construir as imagens para os três serviços e iniciar todos os contêineres.
+    Na pasta raiz do projeto, execute o comando abaixo. Ele irá construir as imagens para os três serviços e iniciar todos os contêineres.
     ```bash
     docker compose up --build
     ```
