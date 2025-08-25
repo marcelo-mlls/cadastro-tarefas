@@ -33,16 +33,13 @@ Antes de começar, garanta que você tenha os seguintes softwares instalados na 
 Esta é a forma recomendada e mais simples de executar toda a aplicação.
 
 1.  **Clone o repositório:**
-    ```bash
-    git clone <URL_DO_SEU_REPOSITORIO>
+    git clone https://github.com/marcelo-mlls/cadastro-tarefas
     cd <NOME_DA_PASTA_DO_PROJETO>
-    ```
 
 2.  **Construa e suba os contêineres:**
     Na raiz do projeto, execute o seguinte comando. Ele irá construir as imagens para os três serviços e iniciar todos os contêineres.
-    ```bash
     docker-compose up --build
-    ```
+
     Aguarde até que todos os logs de inicialização terminem.
 
 3.  **Acesse a aplicação:**
@@ -57,13 +54,13 @@ Esta é a forma recomendada e mais simples de executar toda a aplicação.
 Para rodar os testes de integração de cada microserviço, navegue até a pasta do serviço e use o Maven.
 
 **Para o `user-service`:**
-```bash
-cd user-service
+cd userservice
 mvn test
-Para o task-service:
 
+Para o taskservice:
 cd task-service
 mvn test
+
 Testes de Frontend
 Os testes de frontend requerem a instalação das dependências do Node.js.
 
